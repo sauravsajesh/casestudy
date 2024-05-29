@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Image to SVG Converter</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Upload Image to Convert to SVG</h1>
+      <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <input type="file" name="file" class="form-control-file">
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
+      {% if original_image %}
+      <h2>Original Image:</h2>
+      <img src="{{ original_image }}" class="img-fluid">
+      <h2>Line Drawing:</h2>
+      <img src="{{ line_drawing }}" class="img-fluid">
+      <h2>SVG Image:</h2>
+      <object type="image/svg+xml" data="{{ svg_image }}" class="img-fluid"></object>
+      {% endif %}
+    </div>
+  </body>
+</html>
